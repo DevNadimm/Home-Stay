@@ -21,6 +21,9 @@ abstract class Property {
   final List<Review> reviews;
   final List<String> images;
   final String? videoUrl;
+  final int? bedroomCount;
+  final int? bathroomCount;
+  final int? livingRoomCount;
 
   const Property({
     required this.id,
@@ -39,6 +42,9 @@ abstract class Property {
     required this.reviews,
     required this.images,
     this.videoUrl,
+    this.bedroomCount,
+    this.bathroomCount,
+    this.livingRoomCount,
   });
 
   String get type;

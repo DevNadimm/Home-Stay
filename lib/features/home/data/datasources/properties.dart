@@ -19,6 +19,9 @@ final List<Property> properties = [
     insurance: true,
     costPerNight: 7500.00,
     discountPercentage: 20.0,
+    bedroomCount: 3,
+    bathroomCount: 2,
+    livingRoomCount: 1,
     features: [
       'Family friendly',
       'Free Wi-Fi',
@@ -105,6 +108,9 @@ final List<Property> properties = [
     selfCheckIn: false,
     insurance: true,
     costPerNight: 12000.00,
+    bedroomCount: 5,
+    bathroomCount: 3,
+    livingRoomCount: 2,
     features: [
       'Beachfront view',
       'Private pool',

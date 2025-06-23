@@ -22,6 +22,9 @@ class GeneralProperty extends Property {
     required super.reviews,
     required super.images,
     super.videoUrl,
+    super.bedroomCount,
+    super.bathroomCount,
+    super.livingRoomCount,
   });
 
   @override
