@@ -6,6 +6,7 @@ import 'package:home_stay/core/utils/helper_functions/calc_avg_rating.dart';
 import 'package:home_stay/core/utils/helper_functions/calc_discount.dart';
 import 'package:home_stay/features/home/domain/entities/property/property.dart';
 import 'package:home_stay/features/home/presentation/screens/property_view_screen.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class UnitPropertyCard extends StatelessWidget {
   final Property property;
@@ -88,7 +89,18 @@ class UnitPropertyCard extends StatelessWidget {
                       color: AppColors.secondaryFontColor,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      if (property.bedroomCount != null)
+                        countRoomContainer(property.bedroomCount!, HugeIcons.strokeRoundedBedDouble),
+                      if (property.livingRoomCount != null)
+                        countRoomContainer(property.livingRoomCount!, HugeIcons.strokeRoundedSofa01),
+                      if (property.bathroomCount != null)
+                        countRoomContainer(property.bathroomCount!, HugeIcons.strokeRoundedToilet01),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
                   Text(
                     property.name,
                     style: const TextStyle(
@@ -143,6 +155,42 @@ class UnitPropertyCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget countRoomContainer (int count, IconData icon)  {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 2,
+          ),
+          decoration: BoxDecoration(
+            color: AppColors.primaryColor.withOpacity(0.05),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            children: [
+              Text(
+                count.toString(),
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.primaryFontColor,
+                ),
+              ),
+              const SizedBox(width: 4),
+              Icon(
+                icon,
+                color: AppColors.primaryFontColor,
+                size: 20,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 8),
+      ],
     );
   }
 }
