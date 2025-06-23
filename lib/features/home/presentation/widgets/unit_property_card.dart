@@ -17,8 +17,7 @@ class UnitPropertyCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.cardColor,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-            width: 1, color: AppColors.inputBorderColor.withOpacity(0.7)),
+        border: Border.all(width: 1, color: AppColors.inputBorderColor.withOpacity(0.7)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,8 +25,7 @@ class UnitPropertyCard extends StatelessWidget {
           Stack(
             children: [
               ClipRRect(
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(12)),
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
                 child: Image.network(
                   property.images[0],
                   height: MediaQuery.sizeOf(context).width / 1.8,
@@ -47,8 +45,7 @@ class UnitPropertyCard extends StatelessWidget {
                   ),
                 ),
               ),
-              if (property.discountPercentage != null &&
-                  property.discountPercentage! > 0)
+              if (property.discountPercentage != null && property.discountPercentage! > 0)
                 Positioned(
                   top: 12,
                   left: -26,
@@ -108,8 +105,7 @@ class UnitPropertyCard extends StatelessWidget {
                 const SizedBox(height: 4),
                 Row(
                   children: [
-                    if (property.discountPercentage != null &&
-                        property.discountPercentage! > 0)
+                    if (property.discountPercentage != null && property.discountPercentage! > 0)
                       Text(
                         "${property.costPerNight.toStringAsFixed(0)} Tk",
                         style: const TextStyle(
