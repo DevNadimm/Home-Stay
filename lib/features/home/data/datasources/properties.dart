@@ -3,6 +3,7 @@ import 'package:home_stay/features/home/domain/entities/property/property.dart';
 import 'package:home_stay/features/home/domain/entities/property/contact_details.dart';
 import 'package:home_stay/features/home/domain/entities/property/facility.dart';
 import 'package:home_stay/features/home/domain/entities/property/refund_policy.dart';
+import 'package:home_stay/features/home/domain/entities/property/rental_pricing_type.dart';
 import 'package:home_stay/features/home/domain/entities/property/review.dart';
 import 'package:home_stay/features/home/domain/entities/property/terms_and_conditions.dart';
 import 'package:home_stay/features/home/domain/entities/property/general_property.dart';
@@ -17,7 +18,8 @@ final List<Property> properties = [
     area: '1500 sq ft',
     selfCheckIn: true,
     insurance: true,
-    costPerNight: 7500.00,
+    price: 7500.00,
+    pricingType: RentalPricingType.perNight,
     discountPercentage: 20.0,
     bedroomCount: 3,
     bathroomCount: 2,
@@ -107,7 +109,8 @@ final List<Property> properties = [
     area: '3000 sq ft',
     selfCheckIn: false,
     insurance: true,
-    costPerNight: 12000.00,
+    price: 12000.00,
+    pricingType: RentalPricingType.perNight,
     bedroomCount: 5,
     bathroomCount: 3,
     livingRoomCount: 2,
@@ -172,7 +175,8 @@ final List<Property> properties = [
     area: '5000 sq ft',
     selfCheckIn: true,
     insurance: false,
-    costPerNight: 3500.00,
+    price: 3500.00,
+    pricingType: RentalPricingType.perNight,
     discountPercentage: 5.0,
     features: [
       'Natural surroundings',
@@ -235,8 +239,9 @@ final List<Property> properties = [
     area: '1100 sq ft',
     selfCheckIn: false,
     insurance: false,
-    costPerNight: 5200.00,
-    discountPercentage: 15.0,
+    price: 5200.00,
+    pricingType: RentalPricingType.perNight,
+    discountPercentage: 35.0,
     features: [
       'Central location',
       'Gym access',
@@ -289,7 +294,8 @@ final List<Property> properties = [
     area: '1400 sq ft',
     selfCheckIn: true,
     insurance: false,
-    costPerNight: 6100.00,
+    price: 6100.00,
+    pricingType: RentalPricingType.perNight,
     discountPercentage: 12.5,
     features: [
       'Mountain view',
@@ -358,7 +364,8 @@ final List<Property> properties = [
     area: '1250 sq ft',
     selfCheckIn: false,
     insurance: true,
-    costPerNight: 8400.00,
+    price: 8400.00,
+    pricingType: RentalPricingType.perNight,
     features: [
       'Sea view',
       'Complimentary breakfast',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_stay/features/home/presentation/widgets/header_section_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/monthly_rentals_section_widget.dart';
 import 'package:home_stay/features/home/presentation/widgets/more_cities_section_widget.dart';
 import 'package:home_stay/features/home/presentation/widgets/popular_cities_section_widget.dart';
 import 'package:home_stay/features/home/presentation/widgets/top_picks_section_widget.dart';
@@ -26,6 +27,8 @@ class HomeScreen extends StatelessWidget {
               VibeBasedUnitsSectionWidget(),
               SizedBox(height: 8),
               MoreCitiesSectionWidget(),
+              SizedBox(height: 8),
+              MonthlyRentalsSectionWidget(),
             ],
           ),
         ),

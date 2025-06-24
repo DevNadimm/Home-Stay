@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:home_stay/core/constants/colors.dart';
+import 'package:home_stay/features/home/presentation/screens/notification_screen.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 class HeaderSectionWidget extends StatelessWidget {
@@ -46,12 +48,15 @@ class HeaderSectionWidget extends StatelessWidget {
               Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  const CircleAvatar(
-                    radius: 20,
-                    backgroundColor: AppColors.cardColor,
-                    child: Icon(
-                      HugeIcons.strokeRoundedNotification03,
-                      color: AppColors.black,
+                  GestureDetector(
+                    onTap: () => Get.to(() => const NotificationScreen()),
+                    child: const CircleAvatar(
+                      radius: 20,
+                      backgroundColor: AppColors.cardColor,
+                      child: Icon(
+                        HugeIcons.strokeRoundedNotification03,
+                        color: AppColors.black,
+                      ),
                     ),
                   ),
                   Positioned(

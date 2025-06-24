@@ -84,7 +84,7 @@ class PropertyViewScreen extends StatelessWidget {
             left: 0,
             right: 0,
             child: BottomActionContainer(
-              price: property.costPerNight,
+              price: property.price,
               discount: property.discountPercentage,
               onChoosePressed: () {},
             ),

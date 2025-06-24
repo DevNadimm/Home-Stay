@@ -1,6 +1,7 @@
 import 'package:home_stay/features/home/domain/entities/property/contact_details.dart';
 import 'package:home_stay/features/home/domain/entities/property/facility.dart';
 import 'package:home_stay/features/home/domain/entities/property/refund_policy.dart';
+import 'package:home_stay/features/home/domain/entities/property/rental_pricing_type.dart';
 import 'package:home_stay/features/home/domain/entities/property/review.dart';
 import 'package:home_stay/features/home/domain/entities/property/terms_and_conditions.dart';
 
@@ -11,7 +12,8 @@ abstract class Property {
   final String area;
   final bool selfCheckIn;
   final bool insurance;
-  final double costPerNight;
+  final double price;
+  final RentalPricingType pricingType;
   final double? discountPercentage;
   final List<String> features;
   final List<Facility> facilities;
@@ -32,7 +34,8 @@ abstract class Property {
     required this.area,
     required this.selfCheckIn,
     required this.insurance,
-    required this.costPerNight,
+    required this.price,
+    required this.pricingType,
     this.discountPercentage,
     required this.features,
     required this.facilities,
@@ -48,4 +51,11 @@ abstract class Property {
   });
 
   String get type;
+
+  double get finalPrice {
+    if (discountPercentage == null || discountPercentage! <= 0) {
+      return price;
+    }
+    return price * (1 - discountPercentage! / 100);
+  }
 }

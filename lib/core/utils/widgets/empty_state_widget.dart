@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_stay/core/constants/colors.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class EmptyStateWidget extends StatelessWidget {
   final String title;
@@ -11,7 +12,7 @@ class EmptyStateWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.message,
-    this.icon,
+    this.icon = HugeIcons.strokeRoundedFileEmpty02,
     this.iconSize = 60,
   });
 
