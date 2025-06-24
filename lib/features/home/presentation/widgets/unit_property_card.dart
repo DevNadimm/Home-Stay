@@ -123,7 +123,7 @@ class UnitPropertyCard extends StatelessWidget {
                     children: [
                       if (property.discountPercentage != null && property.discountPercentage! > 0)
                         Text(
-                          "${property.costPerNight.toStringAsFixed(0)} Tk",
+                          "${property.price.toStringAsFixed(0)} Tk",
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
@@ -132,7 +132,7 @@ class UnitPropertyCard extends StatelessWidget {
                           ),
                         ),
                       Text(
-                        " ${calculateFinalPrice(property.costPerNight, discount: property.discountPercentage).toStringAsFixed(0)} Tk",
+                        " ${calculateFinalPrice(property.price, discount: property.discountPercentage).toStringAsFixed(0)} Tk",
                         style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

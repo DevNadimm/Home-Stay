@@ -13,7 +13,7 @@ class TopPicksItemCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double? discount = property.discountPercentage;
-    double price = property.costPerNight;
+    double price = property.price;
 
     final double finalPrice = (discount != null && discount > 0)
         ? price * (1 - discount / 100)
@@ -129,7 +129,7 @@ class TopPicksItemCardWidget extends StatelessWidget {
           children: [
             if (discount != null && discount > 0) ...[
               Text(
-                "${property.costPerNight.toStringAsFixed(0)} Tk",
+                "${property.price.toStringAsFixed(0)} Tk",
                 style: const TextStyle(
                   fontSize: 14,
                   color: Colors.grey,
