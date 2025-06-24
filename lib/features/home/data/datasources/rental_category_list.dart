@@ -5,20 +5,20 @@ List<RentalCategory> rentalCategoryList = [
   RentalCategory(
     title: 'Economy Stay',
     type: RentalCategoryType.lessThan,
-    maxPrice: 4000,
+    maxPrice: 20000,
     color: Colors.orange,
   ),
   RentalCategory(
     title: "Special Stay",
     type: RentalCategoryType.range,
-    minPrice: 4000,
-    maxPrice: 7000,
+    minPrice: 20000,
+    maxPrice: 40000,
     color: Colors.purple,
   ),
   RentalCategory(
     title: "Luxury Stay",
     type: RentalCategoryType.moreThan,
-    minPrice: 7000,
+    minPrice: 40000,
     color: Colors.deepOrangeAccent,
   ),
 ];

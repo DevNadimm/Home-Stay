@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_stay/core/constants/colors.dart';
 import 'package:home_stay/features/home/domain/entities/rental_category.dart';
+import 'package:intl/intl.dart';
 
 class MonthlyRentalCardWidget extends StatelessWidget {
   final RentalCategory rentalCategory;
@@ -12,6 +13,8 @@ class MonthlyRentalCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formatter = NumberFormat('#,##0', 'en_US');
+
     return Container(
       width: MediaQuery.of(context).size.width / 2.2,
       decoration: BoxDecoration(
@@ -26,7 +29,7 @@ class MonthlyRentalCardWidget extends StatelessWidget {
               children: [
                 if (rentalCategory.minPrice != null)
                   Text(
-                    "৳${rentalCategory.minPrice.toString()}",
+                    "৳${formatter.format(rentalCategory.minPrice)}",
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -36,7 +39,7 @@ class MonthlyRentalCardWidget extends StatelessWidget {
                   ),
                 if (rentalCategory.maxPrice != null)
                   Text(
-                    "৳${rentalCategory.maxPrice.toString()}",
+                    "৳${formatter.format(rentalCategory.maxPrice)}",
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w800,
