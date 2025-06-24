@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_stay/core/constants/colors.dart';
+import 'package:home_stay/core/utils/widgets/custom_cached_image.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PropertyImageSliderWidget extends StatelessWidget {
@@ -22,9 +23,8 @@ class PropertyImageSliderWidget extends StatelessWidget {
               controller: pageController,
               itemCount: images.length,
               itemBuilder: (context, index) {
-                return Image.network(
-                  images[index],
-                  fit: BoxFit.cover,
+                return CustomCachedImage(
+                  imageUrl: images[index],
                   width: double.infinity,
                 );
               },

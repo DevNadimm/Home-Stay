@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_stay/core/constants/colors.dart';
 import 'package:home_stay/core/utils/helper_functions/calc_avg_rating.dart';
+import 'package:home_stay/core/utils/widgets/custom_cached_image.dart';
 import 'package:home_stay/features/home/domain/entities/property/property.dart';
 
 class TopPicksItemCardWidget extends StatelessWidget {
@@ -25,11 +26,10 @@ class TopPicksItemCardWidget extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.network(
-                property.images[0],
+              child: CustomCachedImage(
+                imageUrl: property.images[0],
                 height: 120,
                 width: MediaQuery.of(context).size.width / 2.2,
-                fit: BoxFit.cover,
               ),
             ),
             Positioned(

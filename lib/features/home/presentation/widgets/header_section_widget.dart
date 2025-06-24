@@ -51,7 +51,7 @@ class HeaderSectionWidget extends StatelessWidget {
                     backgroundColor: AppColors.cardColor,
                     child: Icon(
                       HugeIcons.strokeRoundedNotification03,
-                      color: AppColors.primaryColor,
+                      color: AppColors.black,
                     ),
                   ),
                   Positioned(

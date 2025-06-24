@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:home_stay/core/constants/colors.dart';
 import 'package:home_stay/core/utils/helper_functions/calc_avg_rating.dart';
 import 'package:home_stay/core/utils/helper_functions/calc_discount.dart';
+import 'package:home_stay/core/utils/widgets/custom_cached_image.dart';
 import 'package:home_stay/features/home/domain/entities/property/property.dart';
 import 'package:home_stay/features/home/presentation/screens/property_view_screen.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -31,11 +32,10 @@ class UnitPropertyCard extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-                  child: Image.network(
-                    property.images[0],
+                  child: CustomCachedImage(
+                    imageUrl: property.images[0],
                     height: MediaQuery.sizeOf(context).width / 1.8,
                     width: double.infinity,
-                    fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_stay/core/constants/colors.dart';
+import 'package:home_stay/core/utils/widgets/custom_cached_image.dart';
 
 class UnitCardWidget extends StatelessWidget {
   final String unitName;
@@ -22,11 +23,10 @@ class UnitCardWidget extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              imageUrl,
+            child: CustomCachedImage(
+              imageUrl: imageUrl,
               width: double.infinity,
               height: double.infinity,
-              fit: BoxFit.cover,
             ),
           ),
           Container(
