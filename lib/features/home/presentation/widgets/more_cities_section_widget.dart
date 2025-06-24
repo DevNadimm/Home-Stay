@@ -28,6 +28,7 @@ class MoreCitiesSectionWidget extends StatelessWidget {
           SizedBox(
             height: 120,
             child: ListView.separated(
+              physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.symmetric(horizontal: 16),
               scrollDirection: Axis.horizontal,
               itemCount: moreCityList.length,

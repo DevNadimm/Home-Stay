@@ -29,6 +29,7 @@ class TopPicksSectionWidget extends StatelessWidget {
           SizedBox(
             height: 273,
             child: ListView.separated(
+              physics: const BouncingScrollPhysics(),
               itemCount: properties.length,
               shrinkWrap: true,
               padding: const EdgeInsets.only(top: 16, left: 16, right: 16),

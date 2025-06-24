@@ -34,7 +34,7 @@ final List<UnitType> unitTypes = [
   ),
   const UnitType(
     type: PropertyType.farm,
-    label: 'Farm',
+    label: 'Farms',
     imageUrl: 'https://www.akroncf.org/wp-content/uploads/farm-gifts.jpg',
   ),
   const UnitType(

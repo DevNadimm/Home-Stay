@@ -26,6 +26,7 @@ class PopularCitiesSectionWidget extends StatelessWidget {
           SizedBox(
             height: 123,
             child: ListView.separated(
+              physics: const BouncingScrollPhysics(),
               itemCount: cityList.length,
               shrinkWrap: true,
               padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
