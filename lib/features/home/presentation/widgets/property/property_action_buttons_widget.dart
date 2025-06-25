@@ -15,34 +15,46 @@ class PropertyActionButtonsWidget extends StatelessWidget {
         GestureDetector(
           onTap: () => Get.back(),
           child: const CircleAvatar(
-            radius: 20,
-            backgroundColor: AppColors.cardColor,
-            child: Icon(
-              HugeIcons.strokeRoundedArrowLeft01,
-              color: AppColors.black,
-              size: 30,
+            radius: 21,
+            backgroundColor: AppColors.primaryFontColor,
+            child: CircleAvatar(
+              radius: 20,
+              backgroundColor: AppColors.cardColor,
+              child: Icon(
+                HugeIcons.strokeRoundedArrowLeft01,
+                color: AppColors.black,
+                size: 30,
+              ),
             ),
           ),
         ),
         const Row(
           children: [
             CircleAvatar(
-              radius: 20,
-              backgroundColor: AppColors.cardColor,
-              child: Icon(
-                HugeIcons.strokeRoundedShare01,
-                color: AppColors.black,
-                size: 20,
+              radius: 21,
+              backgroundColor: AppColors.primaryFontColor,
+              child: CircleAvatar(
+                radius: 20,
+                backgroundColor: AppColors.cardColor,
+                child: Icon(
+                  HugeIcons.strokeRoundedShare01,
+                  color: AppColors.black,
+                  size: 20,
+                ),
               ),
             ),
             SizedBox(width: 10),
             CircleAvatar(
-              radius: 20,
-              backgroundColor: AppColors.cardColor,
-              child: Icon(
-                CupertinoIcons.heart,
-                color: AppColors.black,
-                size: 22,
+              radius: 21,
+              backgroundColor: AppColors.primaryFontColor,
+              child: CircleAvatar(
+                radius: 20,
+                backgroundColor: AppColors.cardColor,
+                child: Icon(
+                  CupertinoIcons.heart,
+                  color: AppColors.black,
+                  size: 22,
+                ),
               ),
             ),
           ],

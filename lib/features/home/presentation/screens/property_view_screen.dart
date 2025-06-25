@@ -3,11 +3,13 @@ import 'package:home_stay/core/constants/colors.dart';
 import 'package:home_stay/core/utils/helper_functions/calc_avg_rating.dart';
 import 'package:home_stay/features/home/domain/entities/property/property.dart';
 import 'package:home_stay/features/home/presentation/widgets/property/bottom_action_container.dart';
+import 'package:home_stay/features/home/presentation/widgets/property/contact_details_widget.dart';
 import 'package:home_stay/features/home/presentation/widgets/property/facilities_widget.dart';
 import 'package:home_stay/features/home/presentation/widgets/property/property_action_buttons_widget.dart';
 import 'package:home_stay/features/home/presentation/widgets/property/property_features_widget.dart';
 import 'package:home_stay/features/home/presentation/widgets/property/property_highlights_widget.dart';
 import 'package:home_stay/features/home/presentation/widgets/property/property_image_slider_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/property/terms_and_policies_widget.dart';
 
 class PropertyViewScreen extends StatelessWidget {
   final Property property;
@@ -63,10 +65,34 @@ class PropertyViewScreen extends StatelessWidget {
                       const SizedBox(height: 30),
                       PropertyHighlightsWidget(property: property),
                       const SizedBox(height: 30),
-                      if (property.features.isNotEmpty)
+                      if (property.features.isNotEmpty) ...[
                         PropertyFeaturesWidget(features: property.features),
+                        const SizedBox(height: 30),
+                      ],
+                      Divider(
+                        height: 1,
+                        thickness: 1,
+                        color: AppColors.inputBorderColor.withOpacity(0.7),
+                      ),
                       const SizedBox(height: 30),
                       FacilitiesWidget(property: property),
+                      const SizedBox(height: 10),
+                      Divider(
+                        height: 1,
+                        thickness: 1,
+                        color: AppColors.inputBorderColor.withOpacity(0.7),
+                      ),
+                      const SizedBox(height: 30),
+                      TermsAndPoliciesWidget(property: property),
+                      const SizedBox(height: 30),
+                      Divider(
+                        height: 1,
+                        thickness: 1,
+                        color: AppColors.inputBorderColor.withOpacity(0.7),
+                      ),
+                      const SizedBox(height: 30),
+                      ContactDetailsWidget(contactDetails: property.contactDetails),
+                      const SizedBox(height: 10),
                     ],
                   ),
                 ),
