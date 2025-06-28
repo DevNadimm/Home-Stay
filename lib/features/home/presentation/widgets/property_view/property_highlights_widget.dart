@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:home_stay/features/home/domain/entities/property/property.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/property_highlight_card.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/property_highlight_card.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 class PropertyHighlightsWidget extends StatelessWidget {
