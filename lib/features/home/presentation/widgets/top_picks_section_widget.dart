@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:home_stay/core/constants/colors.dart';
 import 'package:home_stay/features/home/data/datasources/properties.dart';
 import 'package:home_stay/features/home/presentation/screens/property_view_screen.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/top_picks_item_card_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/top_picks_item_card_widget.dart';
 
 class TopPicksSectionWidget extends StatelessWidget {
   const TopPicksSectionWidget({super.key});

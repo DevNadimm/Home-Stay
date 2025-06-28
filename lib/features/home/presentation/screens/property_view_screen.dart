@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:home_stay/core/constants/colors.dart';
 import 'package:home_stay/core/utils/helper_functions/calc_avg_rating.dart';
 import 'package:home_stay/features/home/domain/entities/property/property.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/bottom_action_container.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/contact_details_widget.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/facilities_widget.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/property_action_buttons_widget.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/property_features_widget.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/property_highlights_widget.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/property_image_slider_widget.dart';
-import 'package:home_stay/features/home/presentation/widgets/property/terms_and_policies_widget.dart';
+import 'package:home_stay/features/home/presentation/screens/review_and_payment_screen.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/bottom_action_container.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/contact_details_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/facilities_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/property_action_buttons_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/property_features_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/property_highlights_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/property_image_slider_widget.dart';
+import 'package:home_stay/features/home/presentation/widgets/property_view/terms_and_policies_widget.dart';
 
 class PropertyViewScreen extends StatelessWidget {
   final Property property;
@@ -112,7 +114,7 @@ class PropertyViewScreen extends StatelessWidget {
             child: BottomActionContainer(
               price: property.price,
               discount: property.discountPercentage,
-              onChoosePressed: () {},
+              onChoosePressed: () => Get.to(() => ReviewAndPaymentScreen(property: property)),
             ),
           ),
         ],
