@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:home_stay/features/home/presentation/screens/booking_screen.dart';
 import 'package:home_stay/features/home/presentation/screens/home_screen.dart';
 import 'package:hugeicons/hugeicons.dart';
 
-const List<Widget> bottomNavScreens = [
-  HomeScreen(),
-  Placeholder(),
-  Placeholder(),
-  Placeholder(),
-  Placeholder(),
+List<Widget> bottomNavScreens = [
+  const HomeScreen(),
+  const Placeholder(),
+  const BookingScreen(),
+  const Placeholder(),
+  const Placeholder(),
 ];
 
 const List<BottomNavigationBarItem> bottomNavItems = [
