@@ -15,8 +15,9 @@ import 'package:home_stay/features/home/presentation/widgets/property_view/terms
 
 class PropertyViewScreen extends StatelessWidget {
   final Property property;
+  final bool isBooked;
 
-  const PropertyViewScreen({super.key, required this.property});
+  const PropertyViewScreen({super.key, required this.property, this.isBooked = false});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class PropertyViewScreen extends StatelessWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: const EdgeInsets.only(bottom: 80),
+            padding: !isBooked ? const EdgeInsets.only(bottom: 80) : null,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -107,16 +108,17 @@ class PropertyViewScreen extends StatelessWidget {
             right: 10,
             child: const PropertyActionButtonsWidget(),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: BottomActionContainer(
-              price: property.price,
-              discount: property.discountPercentage,
-              onChoosePressed: () => Get.to(() => ReviewAndPaymentScreen(property: property)),
+          if (!isBooked)
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: BottomActionContainer(
+                price: property.price,
+                discount: property.discountPercentage,
+                onChoosePressed: () => Get.to(() => ReviewAndPaymentScreen(property: property)),
+              ),
             ),
-          ),
         ],
       ),
     );

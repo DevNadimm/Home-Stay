@@ -5,6 +5,7 @@ import 'package:home_stay/core/utils/widgets/custom_cached_image.dart';
 import 'package:home_stay/core/utils/widgets/empty_state_widget.dart';
 import 'package:home_stay/features/home/data/datasources/user_bookings.dart';
 import 'package:home_stay/features/home/domain/entities/booking.dart';
+import 'package:home_stay/features/home/presentation/screens/property_view_screen.dart';
 import 'package:intl/intl.dart';
 
 class BookingScreen extends StatelessWidget {
@@ -24,6 +25,7 @@ class BookingScreen extends StatelessWidget {
               message: 'You haven’t made any bookings yet. All your bookings will appear here once you book a property.',
             )
           : ListView.builder(
+              physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(16),
               itemCount: bookings.length,
               itemBuilder: (context, index) {
@@ -40,7 +42,7 @@ class BookingScreen extends StatelessWidget {
                   child: InkWell(
                     borderRadius: BorderRadius.circular(12),
                     onTap: () {
-                      // TODO: Navigate to booking details or perform action
+                      Get.to(() => PropertyViewScreen(property: property, isBooked: true));
                     },
                     child: SizedBox(
                       height: 150,
@@ -66,7 +68,7 @@ class BookingScreen extends StatelessWidget {
                                     child: Container(
                                       width: 150,
                                       padding: const EdgeInsets.symmetric(vertical: 4),
-                                      color: _statusColor(booking.status.name).withOpacity(0.7),
+                                      color: _statusColor(booking.status.name).withOpacity(0.9),
                                       alignment: Alignment.center,
                                       child: Text(
                                         booking.status.name.capitalizeFirst ?? '',
@@ -123,9 +125,13 @@ class BookingScreen extends StatelessWidget {
                                     children: [
                                       const Icon(Icons.login_rounded, size: 14, color: AppColors.grey),
                                       const SizedBox(width: 6),
-                                      Text(
-                                        formatDateTimeWithTime(booking.checkIn),
-                                        style: const TextStyle(fontSize: 12, color: AppColors.grey),
+                                      Expanded(
+                                        child: Text(
+                                          "Check-in: ${formatDateTimeWithTime(booking.checkIn)}",
+                                          style: const TextStyle(fontSize: 12, color: AppColors.grey),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.clip,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -134,9 +140,13 @@ class BookingScreen extends StatelessWidget {
                                     children: [
                                       const Icon(Icons.logout_rounded, size: 14, color: AppColors.grey),
                                       const SizedBox(width: 6),
-                                      Text(
-                                        formatDateTimeWithTime(booking.checkOut),
-                                        style: const TextStyle(fontSize: 12, color: AppColors.grey),
+                                      Expanded(
+                                        child: Text(
+                                          "Check-out: ${formatDateTimeWithTime(booking.checkOut)}",
+                                          style: const TextStyle(fontSize: 12, color: AppColors.grey),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.fade,
+                                        ),
                                       ),
                                     ],
                                   ),
